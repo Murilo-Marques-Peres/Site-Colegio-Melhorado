@@ -8,8 +8,38 @@ html, body{
     width: 100%;
 }
 main{
-    background: linear-gradient(rgb(41, 0, 41),rgb(12, 0, 12));
+    background-color: rgba(64, 64, 146);
     height: 2000px;
+}
+.MaisEspaco{
+    display: block;
+    margin-top: 30px;
+}
+.menu{
+    float: left;
+    width: 20%;
+    height: 100%;
+    background-color: rgb(28, 28, 63);
+}
+section.erro-404{
+    margin: 70px auto;
+    min-height:600px;
+    width: 80%;
+    background-color: aqua;
+}
+section.erro-404 h2{  
+    text-align: center;
+    font-weight: 400;
+    border-top: 2px solid black;
+}
+section.erro-404 p{
+    text-align: center;
+    font-size: 16px;
+    font-weight: 300;
+}
+.aluno{
+    position: relative;
+    top: -30px;
 }
 nav{
     position: fixed;
@@ -50,8 +80,13 @@ nav li{
     background: linear-gradient(red, black);
     color: gray;
 }
+.menu-active{
+	background: #3a4b51;
+}
 .form1{
+    margin-top: 30px;
     display: inline-block;
+
 }
 .principal2 .form2{
     position: absolute;
@@ -89,26 +124,29 @@ footer p{
     color: white;
 }
 .container{
-    width: 100%;
+    float: right;
+    width: 80%;
     height: 700px;
     margin-bottom: 70px;
+    background-color: rgb(157, 157, 209);
 }
 
 div.principal{
     height: 100%;
     width: 100%;
-    background-color: rgba(7, 7, 177,0.3);
+    background-color: rgba(64, 64, 146);
     
 }
 .container2{
-    width: 100%;
+    float: right;
+    width: 80%;
     height: 700px;
 }
 
 div.principal2{
     height: 100%;
     width: 100%;
-    background-color: rgba(7, 7, 177,0.3);
+    background-color: rgba(64, 64, 146);
     margin: 0 auto;
     
 }
@@ -131,7 +169,15 @@ input[type=text].cpfMudar{
     cursor: pointer;
 }
 
-
+a{
+    display: block;
+	padding: 8px;
+	font-weight: 300;
+	font-size: 19px;
+	text-decoration: none;
+	color: white;
+	border-bottom: 2px solid #2F3D42;
+}
 
 .form1 input[type=submit]{
     padding: 5px;
@@ -152,36 +198,40 @@ input[type=text].cpfMudar{
 .principal label{
     font-weight: 300;
     font-size: 20px;
-    color: rgb(155, 149, 149);
+    color: black;
 }
 .principal2 label{
     font-weight: 300;
     font-size: 20px;
-    color: rgb(155, 149, 149);
+    color: black;
 }
 select{
     margin-right: 30px;
-    background: linear-gradient(gray, white);
+    background: linear-gradient(darkgray, gray);
     color: black;
     width: 40px;
+    height: 25px;
 
 }
 .principal .tableP{
+    display: none;
     text-align: center;
     margin-left: 245px;
     margin-top: 50px;
-    display: block;
     width: 485px;
     height: 450px;
     background: linear-gradient(gray, white);
     overflow-y: auto;
 }
+.separador{
+    background-color: rgb(157, 157, 209);
+}
 .principal .tableNotas{
     display: inline-block;
     height: 450px;
     /*width: 41%;*/
-    margin-left: 750px;
-    margin-top: -450px;
+    margin-left: 245px;
+    margin-top: 50px;
     text-align: center;
     background: linear-gradient(gray, white);
     overflow-y: auto;
@@ -204,5 +254,5 @@ input[type=text]{
     border-radius: 3px;
 }
 .containerP{
-    background-color: rgb(2, 2, 63);
+    background-color: rgb(157, 157, 209);
 }

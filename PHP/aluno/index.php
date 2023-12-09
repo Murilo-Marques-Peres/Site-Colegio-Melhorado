@@ -1,5 +1,5 @@
 <?php
-require "config.php";
+require "../config.php";
 
 session_start();
 $usuario = $_SESSION["usuario"];
@@ -7,7 +7,7 @@ $senha = $_SESSION["senha"];
 $logado = isset($_SESSION["logado"]);
 
 if(!$logado){
-    header("location: ../index");
+    header("location: ../index.php");
     exit;
     //Recommended by the teacher to use die()
 }
@@ -38,6 +38,7 @@ if($sql->rowCount() > 0){
 ?>
 
 <head>
+<body>
     <style>
         *{
             margin:0px;
@@ -73,7 +74,7 @@ if($sql->rowCount() > 0){
             width: 32px;
             height: 32px;
             background-color: red;
-            background-image: url("../images/ligar.png");
+            background-image: url("../../images/ligar.png");
             background-size: 100% 100%;
             border-radius: 32px;
             border: 3px solid black;
@@ -116,7 +117,7 @@ if($sql->rowCount() > 0){
                     <?php
                         if(isset($_POST["acao"])){
                             session_destroy();
-                            header("location: ../index");
+                            header("location: ../../index");
                         }
                     ?>
                 </form>    
@@ -144,6 +145,6 @@ if($sql->rowCount() > 0){
             </table>
         </div>
     </main>
-    <script src="../JS/jquery.js"></script>
-    <script src="../JS/function.js"></script>
+    <script src="../../JS/jquery.js"></script>
+    <script src="../../JS/function.js"></script>
 </body>

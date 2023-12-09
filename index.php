@@ -8,11 +8,11 @@ if(isset($_SESSION["loginADM"])){
     $confirmacao2 = ($_SESSION["loginADM"]);
 }
 if($confirmacao1 && $confirmacao2){
-    header("location: PHP/pageAdmin");
+    header("Location: ".INCLUDE_PATH_ADMIN);
     exit;
 }
 else if($confirmacao1 && !$confirmacao2){
-    header("location: PHP/pageNotas");
+    header("location: ".INCLUDE_PATH_ALUNO);
     exit;
 }
 if(isset($_SESSION["erroUser"])){
@@ -23,7 +23,7 @@ if(isset($_SESSION["erroUser"])){
 ?>
 <html>
     <head>
-        <link href="CSS/estilo.css" type="text/css" rel="stylesheet">
+        <link href="<?php echo INCLUDE_PATH; ?>CSS/estilo.css" type="text/css" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">

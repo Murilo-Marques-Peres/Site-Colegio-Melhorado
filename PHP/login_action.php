@@ -22,7 +22,7 @@ foreach($info as $key => $element){
 
 if($usuario && $senha){
     if($sql->rowCount() > 0 && $tipo == "Aluno"){
-        header("Location: pageNotas");
+        header("Location: ".INCLUDE_PATH_ALUNO);
         $_SESSION["loginADM"] = false;
         $_SESSION["logado"] = true;
         $_SESSION["erroUser"] = false;
@@ -30,7 +30,7 @@ if($usuario && $senha){
         //Recommended by the teacher to use die()
     }
     if($sql->rowCount() > 0 && $tipo == "Admin"){
-        header("Location: pageAdmin");
+        header("Location: ".INCLUDE_PATH_ADMIN);
         $_SESSION["loginADM"] = true;
         $_SESSION["logado"] = true;
         $_SESSION["erroUser"] = false;
@@ -38,9 +38,11 @@ if($usuario && $senha){
         //Recommended by the teacher to use die()
     }
     if($sql->rowCount() == 0){
-        header("location: ../index");
+        header("Location: ".INCLUDE_PATH_ADMIN);
         $_SESSION["erroUser"] = true;
     }
+}else{
+    header("location: ".INCLUDE_PATH);
 }
 
 
