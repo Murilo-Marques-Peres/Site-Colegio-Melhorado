@@ -29,12 +29,25 @@ $sql = $pdo->query("SELECT aluno.cpf, aluno.nome, materia.nome as materia, desem
 from desempenho INNER JOIN materia 
 ON desempenho.idmateria = materia.id
 INNER JOIN aluno
-ON desempenho.cpfaluno = aluno.cpf
-WHERE desempenho.cpfaluno = '$cpf' && ano = 2023");
+ON desempenho.cpf = aluno.cpf
+WHERE desempenho.cpf = '$cpf' && ano = 2023");
 
 if($sql->rowCount() > 0){
     $lista2 = $sql->FetchAll(PDO::FETCH_ASSOC);
 }
+
+/// tentativa de update /////
+
+$sql4 = $pdo->prepare("SELECT * FROM aluno WHERE cpf = ?");
+$sql4->execute(array($cpf));
+
+$lista4 = [];
+$lista4 = $sql4->FetchAll(PDO::FETCH_ASSOC);
+
+foreach ($lista4 as $aluno4){
+    $nomeBoletim = $aluno4["nome"];
+}
+
 ?>
 
 <head>
@@ -54,6 +67,7 @@ if($sql->rowCount() > 0){
         }
         table{
             border-collapse: collapse;
+            background: linear-gradient(silver, purple); 
         }
         main{
             background-image: linear-gradient(gray, white);
@@ -65,6 +79,7 @@ if($sql->rowCount() > 0){
         }
         h1{
             margin-bottom:40px;
+
         }
         nav{
             position: absolute;
@@ -103,6 +118,14 @@ if($sql->rowCount() > 0){
             color: gray;
             font-weight: bold;
         }
+        .nomeboletim{
+            text-align:center;
+            position: relative;
+            right: 275px;
+            padding: 30px;
+            border-radius: 50%;
+            background: linear-gradient(rgb(24, 21, 21), purple); 
+        }
         <script src="https://kit.fontawesome.com/b6a341c846.js" crossorigin="anonymous"></script>
     </style>
 </head>
@@ -127,7 +150,7 @@ if($sql->rowCount() > 0){
     </nav>
         <div class="box">
             <table>
-                <h1> Boletim </h1>
+                <h1 class="nomeboletim"> Boletim De <?=$nomeBoletim;?></h1>
                 <tr>
                     <th>Materia</th>
                     <th>Nota 1</th>

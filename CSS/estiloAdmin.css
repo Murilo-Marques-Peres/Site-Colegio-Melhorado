@@ -81,7 +81,7 @@ nav li{
     color: gray;
 }
 .menu-active{
-	background: #3a4b51;
+	background: #053344;
 }
 .form1{
     margin-top: 30px;
@@ -108,7 +108,7 @@ nav li{
 .visual{
     width: 100%;
     text-align: center;
-    background: linear-gradient(90deg, rgb(83, 83, 83), gray);
+    background: linear-gradient(rgb(83, 83, 83), gray);
     margin-bottom: 35px;
 }
 footer{

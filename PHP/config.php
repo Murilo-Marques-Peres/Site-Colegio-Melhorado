@@ -3,7 +3,7 @@
 define("HOST", "localhost");
 define("DB", "colegio1");
 define("USER", "root");
-define("PASS", "");
+define("PASS", "deGrasse98");
 
 define('INCLUDE_PATH',"http://localhost/Meus_Projetos/Colegio_3_2/");
 define("INCLUDE_PATH_ADMIN", INCLUDE_PATH."PHP/admin/");

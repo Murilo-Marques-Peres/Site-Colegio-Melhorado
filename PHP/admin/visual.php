@@ -57,7 +57,7 @@
 
                         if(isset($_POST["acao1"])){
                             $serieTurma = serieTurma();
-                            $nomePesquisa = $_POST["nomePesquisado"]."%";
+                            $nomePesquisa = "%".$_POST["nomePesquisado"]."%";
                             $sql = $pdo->prepare("SELECT aluno.cpf, aluno.nome, turma.serieturma FROM aluno INNER JOIN turma
                             on aluno.turmaid = turma.id WHERE turma.serieturma = ? && aluno.nome LIKE ?");
                             $sql->execute(array($serieTurma,$nomePesquisa));
